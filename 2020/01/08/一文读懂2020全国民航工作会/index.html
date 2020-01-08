@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="keywords" content="IFC, IFE" />
+    <title>
+        CABS in Cloud
+    </title>
+    <!-- favicon -->
+    
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/favicon.ico" />
+     
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- highlight -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github-gist.min.css" />
+    <script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad()
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@2.0.0/dist/main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@2.0.0/dist/main.js"></script> 
+    <script>
+        infiniteScroll()
+    </script>
+
+    <script>
+        infiniteScroll()
+
+        window.addEventListener('DOMContentLoaded', function () {
+            const [
+                mainTitle,
+                mobileMenu,
+                mobileMainTitle,
+                mobileMenuBtn,
+                ipadMenuBtn,
+                aside,
+                closeBtn,
+            ] = getEle(
+                '#main-title',
+                '.mobile-menu',
+                '.mobile-menu h3',
+                '.mobile-menu button',
+                '.ipad-menu',
+                'aside',
+                'aside .close',
+            )
+            const io = new IntersectionObserver(entries => {
+                if (entries[0].intersectionRatio <= 0) {
+                    mobileMainTitle.classList.remove('invisibile')
+                } else {
+                    mobileMainTitle.classList.add('invisibile')
+                }
+            })
+            io.observe(mainTitle)
+
+            clickToggleAside(mobileMenuBtn)
+            clickToggleAside(ipadMenuBtn)
+            clickToggleAside(closeBtn, false)
+
+            const isMenuVisible = window.getComputedStyle(mobileMenu).display !== 'none'
+            if (isMenuVisible) document.body.style.background = 'none'
+
+            function getEle(...args) {
+                return args.map(arg => document.querySelector(arg))
+            }
+
+            function clickToggleAside(btn, show = true) {
+                btn.addEventListener('click', function () {
+                    if (show) {
+                        aside.style.display = 'block'
+                    } else {
+                        aside.style.display = 'none'
+                    }
+                })
+            }
+        })
+    </script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
+    <div class="container">
+        <header class="header">
+    <nav class="mobile-menu" style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
+        <h3 class="invisibile">
+            <a href="/" class="logo">
+                CABS in Cloud
+            </a>
+        </h3>
+        <button class="menu">menu</button>
+    </nav>
+
+    <button class="ipad-menu menu">menu</button>
+
+    <h1 class="title" id="main-title">
+        <a href="/" class="logo">
+            CABS in Cloud
+        </a>
+    </h1>
+    <h2 class="desc">
+        Surfing the internet in the sky
+    </h2>
+
+    <div class="links">
+
+    </div>
+</header>
+        <main class="main">
+            <article class="post">
+    
+    
+    <h4 class="post-cat">
+        <a href="/categories/News/">
+            News
+        </a>
+    </h4>
+    
+    
+    <h2 class="post-title">
+        一文读懂2020全国民航工作会
+    </h2>
+    <ul class="post-date">
+        <li>
+            2020-01-08
+        </li>
+        <li>
+            Dawning
+        </li>
+    </ul>
+    <div class="post-content">
+        <h1 id="2019年民航大数据"><a href="#2019年民航大数据" class="headerlink" title="2019年民航大数据"></a>2019年民航大数据</h1><p>全行业营业收入1.06万亿元，比上年增长5.4%。</p>
+<p>全年运输总周转量1292.7亿吨公里、旅客运输量6.6亿人次、货邮运输量752.6万吨，同比分别增长7.1%、7.9%、1.9%。民航旅客周转量在综合交通运输体系中的占比达32.8%，同比提升1.5个百分点。【航旅圈注：2018年的三个指标分别增长11.4%，10.9%，4.6%，意味着2019年的增速有所放缓】</p>
+<p>截至2019年底，实现运输航空持续安全飞行112个月、8068万小时的安全新纪录，连续17年7个月实现空防安全零责任事故。</p>
+<p>保持“控总量、调结构”的战略定力，调整了武汉、昆明、广州、西安、重庆、成都、浦东等7个繁忙机场的容量标准，每周增加航班时刻5334个，36个航班时刻协调机场时刻执行率达93.5%，同比提升约2个百分点。【航旅圈注：7个机场容量标准上调，协调机场与其他机场增速差距减小，事实上“控总量”力度更大，“调结构”力度有所放松】</p>
+<p>努力扩充航权资源，大幅增加进入日本东京等主流市场的运力额度，扩大与韩国、芬兰等国航空运输市场准入，实现国际航权资源配置“一次提交、一网通办”，新辟国际地区航线549条。【航旅圈注：中日整体航班量增长了47%，解决了多年运力不足的问题，中日中韩机票价格将明显下降，航司航线经营也迎来新的挑战】</p>
+<p>减半征收航空公司民航发展基金、暂停飞机起降费标准上浮、扩大实施特殊政策支线机型范围等降成本政策组合拳，全年降低企业成本并直接转化成企业经营效益90多亿元，落实中小机场、支线航空、通用航空、贷款贴息等各项补贴政策资金36.6亿元。</p>
+<p>目前全行业共有运输企业62家，机队规模达3818架；国内、国际航线从改革开放初的162条增长到5155条。</p>
+<p>全国运输机场数量由1978年的78个增加到目前的238个，全国机场吞吐量由1978年232万人次升至目前的13.5亿人次；千万级机场达39个，同比增加2个（银川河东机场及烟台蓬莱机场）。【航旅圈注：机场吞吐量增长了580倍，机场数量只增长了不到3倍，机场建设已成为行业主要容量瓶颈之一】</p>
+<p>全年完成固定资产投资950亿元，新增跑道10条、航站楼面积174.9万平方米、油库容积32万立方米。</p>
+<p>在航班总量同比增长5.57%、极端天气增多以及其他用户活动大幅增加的情况下，全国航班正常率达81.65%，同比提高1.52个百分点。</p>
+<p>229个机场和主要航空公司可实现“无纸化”出行；37家千万级机场国内旅客平均自助值机比例达71.6%；在8家航空公司、29家机场开展跨航司行李直挂试点；15家航空公司410架飞机为805万旅客提供了客舱WIFI服务。</p>
+<p>全行业吨公里油耗较基线下降约16%，机场每客能耗较基线下降约12%。</p>
+<p>加快推动通航法规体系重构，正式发布全国目视飞行航图，通航飞行达112.5万小时，同比增长13.8%；颁证通用机场数量达246座，首次超过运输机场。</p>
+<p>创新无人机发展政策，开展无人机物流配送试点，注册无人机超过39.2万架，无人机商业飞行125万小时。</p>
+<h1 id="2019年民航工作亮点"><a href="#2019年民航工作亮点" class="headerlink" title="2019年民航工作亮点"></a>2019年民航工作亮点</h1><p>从航空安全技术标准出发，坚持安全隐患零容忍，果断停止波音737MAX8机型的商业运行，消除了发生航空安全事故的最大隐患。</p>
+<p>按照符合国际惯例的航空安全保障要求，及时对香港国泰航空发出重大安全风险警示并采取有力措施，有效防控涉及内地的输入性安全风险，精准敲打港独势力。</p>
+<p>举全行业之力推进北京大兴国际机场建设运营筹备工作。</p>
+<p>大力推进全民航行李全流程跟踪系统（RFID）建设；将“同城同质同价”纳入机场服务质量评价指标；推动出台国际“通程航班”普适政策，国际旅客中转更加便捷；在首都机场、大兴机场试点实施海关监管、民航安检合作查验模式，实现旅客“一次过检”、无感通关；航空货运电子运单使用突破160万票；12326民航服务质量监督电话开通，国内航空公司投诉响应率达100%。</p>
+<p>中欧首次在民航领域签署相关协定，进一步丰富了中欧全面战略伙伴关系内涵。</p>
+<p>积极推动国家空管体制改革工作，完成民航公安管理体制调整改革。</p>
+<p>完成中国民航历史上范围最广、影响最大的一次班机航线调整，新增航路航线里程9275公里。全国千万级以上机场基本完成机坪管制移交。</p>
+<h1 id="2020年预期指标"><a href="#2020年预期指标" class="headerlink" title="2020年预期指标"></a>2020年预期指标</h1><p>增速：当前宏观经济下行压力加大，行业增长速度有所放缓，但我国民航发展稳中向好、持续向好的总趋势没有变，预计增速将持续保持在7.5%左右。</p>
+<p>安全：把好初始适航审定关，做好持续适航监管，坚决拒绝存在设计制造隐患的航空器进入中国运行。把好运输航空公司设立关、运力引进关、人员疲劳关、容量评估关，真正做到风险防控关口前移。</p>
+<p>预期指标：运输总周转量1390亿吨公里、旅客运输量7.1亿人次、货邮运输量763万吨，同比分别增长7.5%、7.6%和1.3%，起降架次增长控制在6%左右。【航旅圈注：2019年三大指标分别增长7.1%、7.9%、1.9%，2020年客货运量增速较2019年进一步放缓】</p>
+<p>冯正霖指出，这一指标是根据“十三五”规划发展目标，结合行业发展需求和保障能力确定的。完成这一指标，必须坚持稳中求进总基调，通过“控总量、调结构”扎牢“稳”的根基，通过加大基础设施建设力度拓展“进”的空间，通过时刻资源精准调控提升“进”的质量。</p>
+<p>这意味着“控总量”政策将在2020年持续，不过对于“控总量”，新的提法是：科学把控运行总量，区别对待高密度机场与中小机场、骨干航路与小流量航线、繁忙时段与非繁忙时段，结合各地区实际运行品质表现和保障资源能力，实施差异化航班时刻供给与配置措施，做到“运行总量精准控、航班时刻精细调”，不搞一刀切。【航旅圈注：控问题调结构政策2.0，能够激发各机场和地方政府积极性，提高正常性，就有增量资源；但具体落地如何避免人为因素需要考虑】</p>
+<h1 id="2020年重点工作"><a href="#2020年重点工作" class="headerlink" title="2020年重点工作"></a>2020年重点工作</h1><h2 id="资源保障："><a href="#资源保障：" class="headerlink" title="资源保障："></a>资源保障：</h2><p>确保青岛胶东、武隆、安康、芜宣、玉林、荆州等机场建成投运，加快成都天府、呼和浩特、杭州、乌鲁木齐、贵阳等机场项目建设进度。</p>
+<p>制定2020年基础设施补短板工作方案，加大民航发展基金投入力度，争取国家专项债券用于民航机场项目建设，固定资产投资力争突破1000亿。</p>
+<p>推进“四强空管”建设，完善民航管制中心布局，推进重点地区空域优化，打通东部海上航线，推进京广大通道全线贯通。</p>
+<p>进一步缩小管制运行间隔，加速空中交通流量。</p>
+<p>探索北京终端区军民航联合运行可推广、可复制经验，与军方共同推动闲置军用机场向民用或军民合用转化。<br>优化航空公司分公司设立条件。<br>研究建立国家空域系统容量与流量量化评估模型，为机场、空域规划与机队、航线网络规划充分衔接提供支撑。【航旅圈注：是“国家”不是“民航”】</p>
+<p>推进航权、时刻、预先飞行计划“数据融合、一网通办”，加快建设全国航班时刻管理平台。</p>
+<p>按照政府主导、多方参与、服务公司的原则，制定完善各航班时刻协调机场时刻分配细则。</p>
+<p>用好增量、盘活存量，完善航班时刻二级市场交换、转让和共同经营机制，在不突破时刻总量的同时更好地满足市场需求，让每一个稀缺的时刻都尽可能得到最大化利用。【航旅圈注：提出时刻二级市场交换转让，对行业和旅客都是好事，时刻巨大价值进一步突显，怎么估值是关键】</p>
+<p>利用北京大兴国际机场投运带来时刻增量的有利时机，推动与航权相对短缺国家的双边会谈。以“一带一路”合作国家和具有较大增长潜力的新兴市场为重点，做好航权储备。</p>
+<p>鼓励航空公司通过航空联盟、代码共享等商务合作方式拓展航线网络，通过投资的方式克服航权障碍进入国际航空运输市场。</p>
+<p>继续深化价格改革，完善价格调控机制；研究出台机场特许经营权管理政策。</p>
+<p>加大对自由贸易试验区、自由贸易港建设的支持，研究在海南自贸区开放第七航权。</p>
+<p>以提高国际中转率为抓手，着力完善北京、上海、广州等机场的国际枢纽功能。</p>
+<h2 id="航空物流："><a href="#航空物流：" class="headerlink" title="航空物流："></a>航空物流：</h2><p>鼓励航空物流企业完善境外网络，积极融入全球供应链、产业链、价值链。</p>
+<p>简化国内货运航权审批，实施航班备案制；放宽国际货运航权管理，扩大一类国际货运航线颁发国家经营许可范围。</p>
+<p>研究晚间部分时段货运时刻不计入控总量范围、支持货运航班使用部分机场白天时刻的政策措施；优化货运高峰期临时加班审批政策。</p>
+<p>加快推进鄂州货运枢纽建设；全面实施郑州机场航空电子货运试点，加快推进航空电子货运业务标准和数据标准建设，实现海关监管与民航各环节之间标准融合、信息互通，推进航空物流无纸化流转。</p>
+<h2 id="国产民机："><a href="#国产民机：" class="headerlink" title="国产民机："></a>国产民机：</h2><p>加快建成适航审定运行管理系统，提高审定效率。</p>
+<p>推进C919、AG600、新舟700、Z15、CJ-1000A发动机等审定项目，做好C919飞机和AC352直升机型号评审工作。</p>
+<p>继续支持ARJ21-700、新舟系列飞机等国产航空产品取得国外认可。研究制定ARJ21飞机运营保障相关政策。</p>
+<p>鼓励国内机场在廊桥选装和购买客梯车时充分考虑国产民机保障需求。</p>
+<h2 id="通用航空："><a href="#通用航空：" class="headerlink" title="通用航空："></a>通用航空：</h2><p>加大通用航空“放管服”改革力度。加快推进通航法规体系重构，做实“分类管理”，进一步降低通航企业运营的制度性成本。取消“非经营性通用航空活动登记核准”行政许可，实施备案管理。</p>
+<p>在国家、军队、地方中发挥桥梁作用，协同推动低空空域管理改革，构建新型空域管理模式。</p>
+<p>支持大型城市“1+N”通用机场建设模式，支持地方政府在粤港澳大湾区建设具备常设口岸功能的通用机场。鼓励支线机场增强对通航业务服务功能，加快完善低空飞行服务保障体系，保障通用航空飞得起来、飞得顺畅。</p>
+<p>坚持审慎包容监管，扶持无人机新业态在通用航空领域的应用。</p>
+<h2 id="航班正常："><a href="#航班正常：" class="headerlink" title="航班正常："></a>航班正常：</h2><p>优化航班正常考核机制，使考核指标、调控措施更加科学、更有针对性。</p>
+<p>2020年，国内客运航空公司航班正常率稳定在80%以上，全国千万级以上机场平均放行正常率和始发航班正常率力争达到85%。</p>
+<h2 id="旅客服务："><a href="#旅客服务：" class="headerlink" title="旅客服务："></a>旅客服务：</h2><p>推广RFID行李跟踪系统广泛使用、连线成网，逐步建成覆盖全国的民航行李跟踪系统。</p>
+<p>推广“中转通”等服务信息产品，丰富线上线下中转服务功能，优化国际通程航班业务模式，深入推进国际旅客中转行李直挂服务。</p>
+<p>优化12326咨询投诉平台功能，开发手机APP，优化投诉管理程序，提升投诉管理水平。</p>
+<p>继续探索开展基本航空服务试点，推动基本航空课题研究成果政策转化，让更多边远地区群众能够乘坐飞机出行。</p>
+<p>推动全国机场旅客共用服务平台建设，推动智慧机场向系统性、整体性发展，实现“一个APP走遍全国机场”。</p>
+<p>建立民航旅客遗失物品全国统一查询平台，实现航空公司、机场遗失物品信息共享互通，为旅客提供“一站式”失物招领信息服务。</p>
+<p>推进民航与高铁、城轨、地铁、公路等多种交通方式的联运业务，扩大“一站式购票”范围，推动安检流程优化，提升旅客综合交通换乘体验。</p>
+<p>在有条件的国际机场推广出境旅客海关查验、民航安检“一机双屏”、“一次过检”模式，实现“无感通关”。</p>
+<p>加强特殊旅客关爱，推进行动不便旅客出行服务立法工作，进一步优化无障碍环境，完善特殊旅客服务设施设备，努力让残疾人、老年人、孕妇等旅客都能享受便捷的民航服务。</p>
+<p>进一步提升机上餐食服务水平，分时段、分航程细化优化标准，定期开展并发布航空公司服务质量评价，将机上餐食服务作为一项重要内容。【航旅圈注：关于餐食，局长特别提到了去年在保空中机上安全的前提下，要求各航司飞机起飞后20分钟，降落前30分钟不能提供餐食服务，从而带来的餐食体验下降，建议各航司2020年要努力开发餐食新品种，以适应中短途运输旅客出行的餐食需求，要把服务品质作为一个考核内容。】</p>
+<hr>
+<blockquote>
+<p>*From: 航旅圈</p>
+</blockquote>
+
+    </div>
+</article>
+        </main>
+        <aside class="aside">
+            <div class="close"></div>
+            <section class="aside-section">
+                
+    <h1>Categories</h1>
+
+    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/News/">News</a></li></ul>
+
+            </section>
+            <section class="aside-section">
+                
+    <h1>Archives</h1>
+
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a></li></ul>
+
+
+            </section>
+            <section class="aside-section tag">
+                
+    <h1>Tags</h1>
+
+    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ATG/" rel="tag">ATG</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IFC/" rel="tag">IFC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B0%91%E8%88%AA/" rel="tag">民航</a></li></ul>
+
+            </section>
+        </aside>
+    </div>
+</body>
+
+</html>
