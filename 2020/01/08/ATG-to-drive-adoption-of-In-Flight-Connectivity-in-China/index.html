@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="keywords" content="IFC, IFE" />
+    <title>
+        CABS in Cloud
+    </title>
+    <!-- favicon -->
+    
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/favicon.ico" />
+     
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- highlight -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github-gist.min.css" />
+    <script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad()
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@2.0.0/dist/main.js"></script>
+
+    <script>
+        infiniteScroll()
+
+        window.addEventListener('DOMContentLoaded', function () {
+            const [
+                mainTitle,
+                mobileMenu,
+                mobileMainTitle,
+                mobileMenuBtn,
+                ipadMenuBtn,
+                aside,
+                closeBtn,
+            ] = getEle(
+                '#main-title',
+                '.mobile-menu',
+                '.mobile-menu h3',
+                '.mobile-menu button',
+                '.ipad-menu',
+                'aside',
+                'aside .close',
+            )
+            const io = new IntersectionObserver(entries => {
+                if (entries[0].intersectionRatio <= 0) {
+                    mobileMainTitle.classList.remove('invisibile')
+                } else {
+                    mobileMainTitle.classList.add('invisibile')
+                }
+            })
+            io.observe(mainTitle)
+
+            clickToggleAside(mobileMenuBtn)
+            clickToggleAside(ipadMenuBtn)
+            clickToggleAside(closeBtn, false)
+
+            const isMenuVisible = window.getComputedStyle(mobileMenu).display !== 'none'
+            if (isMenuVisible) document.body.style.background = 'none'
+
+            function getEle(...args) {
+                return args.map(arg => document.querySelector(arg))
+            }
+
+            function clickToggleAside(btn, show = true) {
+                btn.addEventListener('click', function () {
+                    if (show) {
+                        aside.style.display = 'block'
+                    } else {
+                        aside.style.display = 'none'
+                    }
+                })
+            }
+        })
+    </script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
+    <div class="container">
+        <header class="header">
+    <nav class="mobile-menu" style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
+        <h3 class="invisibile">
+            <a href="/" class="logo">
+                CABS in Cloud
+            </a>
+        </h3>
+        <button class="menu">menu</button>
+    </nav>
+
+    <button class="ipad-menu menu">menu</button>
+
+    <h1 class="title" id="main-title">
+        <a href="/" class="logo">
+            CABS in Cloud
+        </a>
+    </h1>
+    <h2 class="desc">
+        Surfing the internet in the sky
+    </h2>
+
+    <div class="links">
+        <ul>
+            
+            <li>
+                <a href="https://github.com/FrontendSophie" target="_blank" rel="noopener">
+                    Github
+                </a>
+            </li>
+            
+            <li>
+                <a href="https://www.linkedin.com/in/frontendsophie/" target="_blank" rel="noopener">
+                    LinkedIn
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</header>
+        <main class="main">
+            <article class="post">
+    
+    
+    <h4 class="post-cat">
+        <a href="/categories/News/">
+            News
+        </a>
+    </h4>
+    
+    
+    <h2 class="post-title">
+        ATG to drive adoption of In-Flight Connectivity in China
+    </h2>
+    <ul class="post-date">
+        <li>
+            2020-01-08
+        </li>
+        <li>
+            Dawning
+        </li>
+    </ul>
+    <div class="post-content">
+        <p>In flight connectivity is a huge issue in China right now, with less than 10% of the growing civil aviation fleet currently offering connectivity. While other countries may be reliant on satellite IFC to meet their needs, Valour Consultancy believes Air-To-Ground (ATC) networks will drive the adoption of connectivity in China.</p>
+
+
+<p>China is widely acknowledged as being one of the fastest-growing aviation markets in the world right now. So much so, they have even been accused of causing an international pilot shortage as a result.</p>
+<p>Over the next 15 years, China plans to build an additional 200 airports and have been pegged by Airbus as requiring an additional 7,400 aircraft by 2037. However, despite increasing demand for air travel, the vast majority of China’s fleet remains unconnected. This presents the world of IFEC with a massive opportunity.</p>
+<p>##The rush to provide IFC in China##<br>Not so long ago, the use of a smartphone onboard a Chinese aircraft was strictly a no-no. However, since the CAAC relaxed regulations last year, the rush to provide inflight connectivity to smartphone loving passengers has been immense.</p>
+<p>According to Xinhua, the uptake of inflight connectivity has been rapid, with 13 different airlines now sporting connected aircraft. The report suggests that 340 aircraft now have a wireless network on board, delivering in-flight connections to 6.18m passengers. Of these 340 connected aircraft, 180 are thought to be giving passengers air to ground (ATG) WiFi services.</p>
+<p><img src="https://www.getconnected.aero/wp-content/uploads/2019/07/CHina-Airlines-wifi.jpg" alt=""></p>
+<p>While that doesn’t sound too bad on the face of it, it’s not a huge number proportionally. The Chinese commercial fleet currently numbers around 3,700 aircraft, meaning less than 10% are able to offer connectivity. Clearly, this is a huge market opportunity for any IFC provider. With the split between satellite and ATG connections running at roughly 50/50, which way will the market jump?</p>
+<p>Although there has been much activity in the satellite offerings. Including tie-ups between ViaSat and China Satcom as well as Air Esurfing’s distribution rights for Honeywell’s Jet Wave technology, this perhaps isn’t the full picture. UK based Valour Consultancy has recently released a report indicating that ATG will be the driving force behind China’s rush towards inflight connectivity for all.</p>
+<p>China Mobile has recently proposed a 5G Air-To-Ground network, which so far is looking promising. The company completed trails of 4G LTE networks in 2018, and are now working towards the full 5G network using the 4.8-4.9 GHz spectrum.</p>
+<p>##Why ATG would work for China<br>China is one of the very few places in the world that could be considered a good fit for an ATG network. The landmass of the country coupled with the frequency of flights (and predicted domestic market growth) make ATG a strong possibility, at least for domestic operators. ATG is cheaper and faster to fit than A Ku- or Ka-band solution, which would no doubt be appealing for smaller airlines unwilling to invest in satellite technology.</p>
+<p><img src="https://www.getconnected.aero/wp-content/uploads/2019/07/CHina-Eastern.jpg" alt=""></p>
+<p>In Valour’s report, a number of reasons that ATG could be successful for China have been suggested. These include:</p>
+<p>●<strong>The sheer size of China Mobile:</strong> China Mobile is the biggest mobile network provider in the world. They have an estimated 931 million subscribers and provide coverage to 99.5% of the population across the country. Considering the size of China’s landmass, that’s no mean feat.<br>●<strong>China Mobile’s SOE status:</strong> As a state-owned entity, China Mobile should have fewer regulatory issues to contend with in terms of security the appropriate permissions for ATG in-flight connectivity.<br>●<strong>5G license already approved:</strong> The South China Morning Post reported in early June that China had awarded a commercial 5G license to China Mobile, alongside two other mobile network providers and a cable network company.<br>●<strong>CAAC is on board:</strong> The Chinese aviation regulator seems to be behind the proposals. They participated in the 4G trail last year and appear to be supportive of the project.<br>●<strong>A strong network of partners:</strong> China Mobile has some strong partners on the project, including an Airbus subsidiary and Chinese communication giant Huawei.</p>
+<p>While the outlook for an ATG network in China looks positive on the surface, China Mobile still have much work to do to get the project off the ground. For a start, as noted by Valour, they’d need to secure an order from one of the major Chinese Airlines, such as China Southern or Air China. They will also need to prove that the frequency doesn’t interfere with military and space applications, something which is threatening to push the commercial launch date back from 2021 to 2022 or even later.</p>
+<p><img src="https://www.getconnected.aero/wp-content/uploads/2019/07/China-southern-700x434.jpg" alt=""></p>
+<p>The future IFC needs of China are a low hanging fruit ripe for the picking, and China Mobile are in a strong position to pick it. However, they still have obstacles to overcome, but with the momentum and planning they already have in place, it looks like it will happen. Valour Consultancy are positive on the outcome, suggesting as many as 1,300 aircraft will be on the ATG network by 2028.</p>
+<hr>
+<blockquote>
+<p>*From: Get Connected</p>
+</blockquote>
+
+    </div>
+</article>
+        </main>
+        <aside class="aside">
+            <div class="close"></div>
+            <section class="aside-section">
+                
+    <h1>Categories</h1>
+
+    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/News/">News</a></li></ul>
+
+            </section>
+            <section class="aside-section">
+                
+    <h1>Archives</h1>
+
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a></li></ul>
+
+
+            </section>
+            <section class="aside-section tag">
+                
+    <h1>Tags</h1>
+
+    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ATG/" rel="tag">ATG</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IFC/" rel="tag">IFC</a></li></ul>
+
+            </section>
+        </aside>
+    </div>
+</body>
+
+</html>
