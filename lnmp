@@ -1,0 +1,125 @@
+# Steps on install LNMP on CentOS
+[Step 1]前期准备
+1.1 关闭防火墙于selinux
+iptables -F #关闭防火墙
+setenforce 0  #关闭selinux
+getenforce    #查看selinux状态
+vim /etc/selinux/config  #在配置文件中修改selinux
+[root@localhost html]# vim /etc/selinux/config 
+
+
+# This file controls the state of SELinux on the system.
+# SELINUX= can take one of these three values:
+#     enforcing - SELinux security policy is enforced.
+#     permissive - SELinux prints warnings instead of enforcing.
+#     disabled - No SELinux policy is loaded.
+SELINUX=disabled   #改成disabled 
+# SELINUXTYPE= can take one of three two values:
+#     targeted - Targeted processes are protected,
+#     minimum - Modification of targeted policy. Only selected processes are protected. 
+#     mls - Multi Level Security protection.
+SELINUXTYPE=targeted
+
+:wq
+
+
+1.2 下载源码包
+wget install yum
+mysql-5.6.34.tar.gz
+  wget https://downloads.mysql.com/archives/get/p/23/file/mysql-5.6.34.tar.gz
+nginx-1.12.1.tar.gz
+  wget http://nginx.org/download/nginx-1.12.2.tar.gz
+php-5.6.30.tar.gz
+  wget https://www.php.net/distributions/php-5.6.30.tar.gz
+wordpress5.3.2.tar.gz
+  wget https://wordpress.org/latest-zh_CN.tar.gz
+  
+1.3 开发环境与编译工具
+yum -y groupinstall Development Tools
+yum -y install make gcc-c++ cmake bison-devel ncurses-devel libaio libaio-devel perl-Data-Dumper net-tools 
+yum -y install zlib zlib-devel openssl openssl--devel pcre pcre-devel libxml2*
+
+[Step 2]安装MySQL
+2.1 查看并删除系统的mysql服务
+rpm -qa | grep mysql  #如果查询到mysql,就是用rpm -e命令来卸载了原来的mysql
+rm -rf /etc/my.cnf    #删除原来mysql的配置文件
+
+2.2 解压并复制文件
+tar -zxvf mysql-5.6.35-linux-glibc2.5-x86_64.tar.gz  #在下载目录中解压文件
+mkdir /usr/local/mysql   #创建安装目录,方便以后管理
+cp  -R ./mysql-5.6.35-linux-glibc2.5-x86_64/* /usr/local/mysql/  #复制解压文件的目录中
+
+2.3 切换目录并安装
+#使用cmake工具进行安装mysql
+cd /usr/local/mysql/
+cmake -DCMAKE_INSTALL_PREFIX=/usr/local/mysql -DMYSQL_DATADIR=/data/mysql -DSYSCONFDIR=/etc -DWITH_MYISAM_STORAGE_ENGINE=1 -DWITH_INNOBASE_STORAGE_ENGINE=1 -DWITH_MEMORY_STORAGE_ENGINE=1 -DWITH_READLINE=1 -DMYSQL_UNIX_ADDR=/var/lib/mysql/mysql.sock -DMYSQL_TCP_PORT=3306 -DENABLED_LOCAL_INFILE=1 -DWITH_PARTITION_STORAGE_ENGINE=1 -DEXTRA_CHARSETS=all -DDEFAULT_CHARSET=utf8 -DDEFAULT_COLLATION=utf8_general_ci
+make install
+
+2.4 创建数据目录,执行用户并执行初始化脚本
+#初始化脚本
+ mkdir /data
+ useradd -s /sbin/nologin mysql
+ chmod +x ./scripts/mysql_install_db 
+ ./scripts/mysql_install_db --user=mysql --datadir=/data/mysql  
+
+2.5 复制配置文件并配置
+ #配置文件及启动脚本
+cp support-files/my-default.cnf /etc/my.cnf 
+cp support-files/mysql.server /etc/init.d/mysql.server  
+chmod 755 /etc/init.d/mysql.server 
+
+在`vim /etc/my.cnf`配置如下:
+[root@localhost mysql]# vim /etc/my.cnf
+
+# *** default location during install, and will be replaced if you
+# *** upgrade to a newer version of MySQL.
+
+[mysqld]
+
+# Remove leading # and set to the amount of RAM for the most important data
+# cache in MySQL. Start at 70% of total RAM for dedicated server, else 10%.
+# innodb_buffer_pool_size = 128M
+
+# Remove leading # to turn on a very important data integrity option: logging
+# changes to the binary log between backups.
+# log_bin
+
+# These are commonly set, remove the # and set as required.
+# basedir = .....
+# datadir = .....
+datadir =/data/mysql   #添加这个数据存放路径
+# port = .....
+# server_id = .....
+# socket = .....
+socket = /var/lib/mysql/mysql.sock    #还有这个,其他暂时不用动
+...省略...
+
+:wq
+
+2.6 启动mysql并初始设置
+/etc/init.d/mysql.server start   #启动mysql
+/usr/local/mysql/bin/mysql_secure_installation  #初始设置,包含root密码设置等等
+
+2.7 检查服务是否启动
+[root@localhost html]# netstat -lntp
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      1265/master         
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      1052/sshd           
+tcp6       0      0 ::1:25                  :::*                    LISTEN      1265/master         
+tcp6       0      0 :::3306                 :::*                    LISTEN      21121/mysqld    #3306已经启动监听     
+tcp6       0      0 :::22                   :::*                    LISTEN      1052/sshd  
+
+————————————————————————————————————————MySQL安装完成——————————————————————————————————————————————
+
+[Step 3]安装PHP
+
+
+
+
+
+
+
+
+
+
